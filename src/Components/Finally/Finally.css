@@ -1,0 +1,37 @@
+.finally__mark {
+  width: 200px;
+  margin: 50px 0 20px;
+}
+
+.finally__button {
+  display: flex;
+  margin: auto;
+  padding: 10px 25px 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #4a90e2;
+  color: #4a90e2;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+  position: relative;
+  outline: none;
+}
+
+.finally__button:after {
+  content: "\21D2";
+  position: absolute;
+  left: 86%;
+  transition: 0.3s;
+  color: #4a90e2;
+}
+
+.finally__button:hover:after {
+  left: 91%;
+  color: #fff;
+}
+
+.finally__button:hover {
+  color: #fff;
+  background: #4a90e2;
+}

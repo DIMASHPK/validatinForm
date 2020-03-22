@@ -1,0 +1,27 @@
+.header {
+  padding: 20px 0 20px;
+  text-align: center;
+}
+
+.header__title {
+  color: #4a90e2;
+  font-size: 30px;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+.header_progressLine {
+  display: flex;
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.header__progressElement {
+  width: calc(100% / 3);
+  height: 5px;
+  background-color: #fff;
+}
+
+.header__progressElement.blue {
+  background-color: #4a90e2;
+}

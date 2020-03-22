@@ -1,0 +1,21 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 20px 0 0;
+  font-family: Baloo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  min-width: 30%;
+  border: 1px solid #d0d0d0;
+  border-radius: 20px;
+  min-width: 466px;
+}
+
+section {
+  padding: 0 30px 30px;
+  text-align: center;
+}

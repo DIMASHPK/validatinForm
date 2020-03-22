@@ -1,0 +1,33 @@
+.firstStep__inputWrap {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 20px;
+}
+
+.firstStep__inputWrap {
+  text-align: left;
+}
+
+.firstStep__label {
+  text-transform: uppercase;
+  color: #5c5b5c;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.firstStep__input {
+  border: none;
+  border-bottom: 1px solid #5c5b5c;
+  color: #5c5b5c;
+  outline: none;
+  font-size: 20px;
+}
+
+.firstStep__inputWrap.error .firstStep__label,
+.firstStep__inputWrap.error .firstStep__input {
+  color: red;
+}
+
+.firstStep__inputWrap.error .firstStep__input {
+  border-color: red;
+}
