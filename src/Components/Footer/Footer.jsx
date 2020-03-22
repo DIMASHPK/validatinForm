@@ -4,7 +4,6 @@ import "./Footer.css";
 
 export const Footer = ({ path, disabled }) => (
   <footer className={"footer"}>
-    {console.log(disabled())}
     {path.includes("nextStep") ? (
       <button className="footer__button">
         <NavLink to="/" className={"footer__link footer__link_back"}>
@@ -16,7 +15,7 @@ export const Footer = ({ path, disabled }) => (
     )}
     <button className={"footer__button"} disabled={disabled()}>
       {disabled() === true ? (
-        "Next"
+        <span className={"footer__link"}>Next</span>
       ) : (
         <NavLink
           to={path.includes("nextStep") ? "/finally" : "/nextStep"}

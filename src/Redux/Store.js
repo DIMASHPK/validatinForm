@@ -1,9 +1,11 @@
 import { combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { ValiditionReducer } from "./ValidationReducer";
+import { FirstValiditionReducer } from "./FirstValidationReducer";
+import { SecondValiditionReducer } from "./SecondValidationReducer";
 
 const reducers = combineReducers({
-  ValiditionReducer
+  FirstValiditionReducer,
+  SecondValiditionReducer
 });
 
 export const Store = createStore(reducers, composeWithDevTools());

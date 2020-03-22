@@ -1,18 +1,6 @@
 import React from "react";
 import "./SecondStep.css";
 
-const dateInputs = [
-  { id: 1, name: "day", min: 1, max: 31, placeholder: "DD" },
-  { id: 2, name: "month", min: 1, max: 12, placeholder: "MM" },
-  { id: 3, name: "year", placeholder: "YYYY" }
-];
-
-const genderInputs = [
-  { id: 1, value: "male" },
-  { id: 2, value: "female" },
-  { id: 3, value: "unspecified" }
-];
-
 export class SecondStep extends React.Component {
   state = {
     day: "",
@@ -26,33 +14,65 @@ export class SecondStep extends React.Component {
     this.setState({ [name]: value });
 
   render() {
+    const {
+      dateInputs,
+      genderInputs,
+      changeAboutUsAC,
+      aboutUs,
+      adult
+    } = this.props;
+
     return (
       <section className="secondStep">
         <div className="secondStep__date">
-          <h2 className="secondStep__title">Date of birth</h2>
+          <h2 className={`secondStep__title ${!adult ? "error" : ""}`}>
+            {adult === false ? "Sorry you should be adult" : "Date of birth"}
+          </h2>
           <div className="secondStep__dateWrap">
-            {dateInputs.map(({ id, name, min, max, placeholder }) => (
-              <input
-                type="number"
-                onChange={this.handleChange}
-                value={this.state[name]}
-                key={id}
-                min={min && min}
-                max={max && max}
-                name={name}
-                placeholder={placeholder}
-                className="secondStep__dateElement"
-              />
-            ))}
+            {dateInputs.map(
+              (
+                {
+                  id,
+                  name,
+                  min,
+                  max,
+                  placeholder,
+                  value,
+                  onChange,
+                  onBlur,
+                  error
+                },
+                i
+              ) => (
+                <div key={id} className={"secondStep__dateElementWrap"}>
+                  <input
+                    type="number"
+                    onChange={onChange}
+                    onBlur={onBlur}
+                    value={value}
+                    error={error}
+                    key={id}
+                    min={min && min}
+                    max={max && max}
+                    name={name}
+                    placeholder={placeholder}
+                    className={`secondStep__dateElement ${
+                      error || !adult ? "error" : ""
+                    }`}
+                  />
+                  <span className={"secondStep__dateError"}>{error}</span>
+                </div>
+              )
+            )}
           </div>
         </div>
         <div className="secondStep__gender">
-          <h2 className="secondStep__title">Date of birth</h2>
+          <h2 className="secondStep__title">Gender</h2>
           <div className="secondStep__genderWrap">
-            {genderInputs.map(({ id, value }) => (
+            {genderInputs.map(({ id, value, gender, onChange }) => (
               <div
                 className={`secondStep__generElementWrap ${
-                  this.state.gender === value ? "active" : ""
+                  gender === value ? "active" : ""
                 }`}
                 key={id}
               >
@@ -67,8 +87,8 @@ export class SecondStep extends React.Component {
                   type="radio"
                   name={"gender"}
                   value={value}
-                  checked={this.state.gender === value}
-                  onChange={this.handleChange}
+                  checked={gender === value}
+                  onChange={onChange}
                   className={`secondStep__genderElement `}
                   hidden
                 />
@@ -82,8 +102,8 @@ export class SecondStep extends React.Component {
             <select
               name="aboutUs"
               className={"secondStep__aboutUsSelect"}
-              value={this.state.aboutUs}
-              onChange={this.handleChange}
+              value={aboutUs}
+              onChange={changeAboutUsAC}
             >
               <option
                 value=""

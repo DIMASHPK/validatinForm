@@ -1,8 +1,12 @@
 .secondStep__dateWrap,
 .secondStep__genderWrap {
   display: flex;
-  border: 1px solid #d0d0d0;
   border-right: none;
+}
+.secondStep__dateElementWrap {
+  width: calc(100% / 3);
+  position: relative;
+  display: flex;
 }
 
 .secondStep__dateElement,
@@ -11,18 +15,40 @@
   text-align: center;
   outline: none;
   padding: 10px;
-  font-size: 20px;
-  border: none;
-  border-right: 1px solid #d0d0d0;
+  font-size: 19px;
+  border: 1px solid #d0d0d0;
   color: #5c5b5c;
+}
+
+.secondStep__dateElement {
+  width: 100%;
+}
+
+.secondStep__dateElement.error::placeholder {
+  color: red;
+}
+
+.secondStep__dateError {
+  color: red;
+  font-size: 11px;
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
 h2 {
   text-transform: uppercase;
   color: #5c5b5c;
   padding: 20px 0 10px;
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: normal;
   margin: 0;
+}
+
+.secondStep__title.error {
+  color: red;
 }
 
 .secondStep__genderWrap {
@@ -66,7 +92,7 @@ h2 {
   color: #5c5b5c;
   padding: 10px;
   cursor: pointer;
-  -moz-appearance: none; /* Firefox */
-  -webkit-appearance: none; /* Safari and Chrome */
+  -moz-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
 }

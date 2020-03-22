@@ -12,10 +12,33 @@ body {
   min-width: 30%;
   border: 1px solid #d0d0d0;
   border-radius: 20px;
-  min-width: 466px;
+  min-width: 525px;
+  min-height: 532px;
 }
 
 section {
   padding: 0 30px 30px;
   text-align: center;
+}
+
+.firstStep__inputWrap.error .firstStep__label,
+.firstStep__inputWrap.error .firstStep__input,
+.secondStep__dateElement.error {
+  color: red;
+}
+
+.firstStep__inputWrap.error .firstStep__input,
+.secondStep__dateElement.error {
+  border-color: red;
+}
+
+@media screen and (max-width: 525px) {
+  body {
+    width: 100%;
+    padding: 0;
+  }
+  #root {
+    min-width: 100%;
+    border: none;
+  }
 }

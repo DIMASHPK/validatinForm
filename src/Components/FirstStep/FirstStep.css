@@ -1,3 +1,7 @@
+.firstStep {
+  padding: 0 30px 103px;
+}
+
 .firstStep__inputWrap {
   display: flex;
   flex-direction: column;
@@ -21,13 +25,4 @@
   color: #5c5b5c;
   outline: none;
   font-size: 20px;
-}
-
-.firstStep__inputWrap.error .firstStep__label,
-.firstStep__inputWrap.error .firstStep__input {
-  color: red;
-}
-
-.firstStep__inputWrap.error .firstStep__input {
-  border-color: red;
 }
