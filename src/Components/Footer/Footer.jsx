@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
 
-export const Footer = ({ path, disabled }) => (
+export const FooterWithProps = ({ path, disabled }) => (
   <footer className={"footer"}>
     {path.includes("nextStep") ? (
       <button className="footer__button">

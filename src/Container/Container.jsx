@@ -16,10 +16,10 @@ import {
   changeGenderAC,
   changeAboutUsAC
 } from "../Redux/ActionsCreater";
-import { FirstStep } from "../Components/FirstStep/FirstStep";
-import { SecondStep } from "../Components/SecondStep/SecondStep";
-import { Finally } from "../Components/Finally/Finally";
-import { Footer } from "../Components/Footer/Footer";
+import { FirstStepWithProps } from "../Components/FirstStep/FirstStep";
+import { SecondStepWithProps } from "../Components/SecondStep/SecondStep";
+import { FinallyWithProps } from "../Components/Finally/Finally";
+import { FooterWithProps } from "../Components/Footer/Footer";
 import { connect } from "react-redux";
 
 export const ContainerWithData = ({
@@ -153,7 +153,7 @@ export const ContainerWithData = ({
   return (
     <>
       <Route exact path="/nextStep">
-        <SecondStep
+        <SecondStepWithProps
           dateInputs={dateInputs}
           genderInputs={genderInputs}
           changeAboutUsAC={changeAboutUsAC}
@@ -162,10 +162,10 @@ export const ContainerWithData = ({
         />
       </Route>
       <Route exact path="/">
-        <FirstStep inputs={inputs} />
+        <FirstStepWithProps inputs={inputs} />
       </Route>
       <Route exact path="/finally">
-        <Finally
+        <FinallyWithProps
           email={email}
           password={password}
           day={day}
@@ -176,7 +176,7 @@ export const ContainerWithData = ({
         />
       </Route>
       {!pathname.includes("finally") && (
-        <Footer path={pathname} disabled={disabledLink} />
+        <FooterWithProps path={pathname} disabled={disabledLink} />
       )}
     </>
   );

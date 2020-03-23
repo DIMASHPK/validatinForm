@@ -1,7 +1,7 @@
 import React from "react";
 import "./FirstStep.css";
 
-export const FirstStep = ({ inputs }) => (
+export const FirstStepWithProps = ({ inputs }) => (
   <section className="firstStep">
     {inputs.map(({ name, id, label, value, onChange, onBlur, error }) => (
       <div

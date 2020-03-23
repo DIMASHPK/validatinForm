@@ -1,7 +1,7 @@
 import React from "react";
 import "./SecondStep.css";
 
-export class SecondStep extends React.Component {
+export class SecondStepWithProps extends React.Component {
   state = {
     day: "",
     month: "",
@@ -30,20 +30,17 @@ export class SecondStep extends React.Component {
           </h2>
           <div className="secondStep__dateWrap">
             {dateInputs.map(
-              (
-                {
-                  id,
-                  name,
-                  min,
-                  max,
-                  placeholder,
-                  value,
-                  onChange,
-                  onBlur,
-                  error
-                },
-                i
-              ) => (
+              ({
+                id,
+                name,
+                min,
+                max,
+                placeholder,
+                value,
+                onChange,
+                onBlur,
+                error
+              }) => (
                 <div key={id} className={"secondStep__dateElementWrap"}>
                   <input
                     type="number"
