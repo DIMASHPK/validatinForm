@@ -42,7 +42,14 @@ export const FirstValiditionReducer = (
         ...state,
         passwordValid: {
           ...state.passwordValid,
-          passwordError: validFunc.passwordValid(password)
+          passwordError: validFunc.passwordValid(password),
+          validPassword:
+            state.passwordValid.passwordError === "" &&
+            state.password === state.confirm,
+          confirmError:
+            state.password !== state.confirm && state.confirm.length > 0
+              ? "Password confirmation should match the password"
+              : ""
         }
       };
     case VALID_CONFIRM:

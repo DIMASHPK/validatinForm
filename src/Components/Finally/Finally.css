@@ -1,3 +1,7 @@
+.finally {
+  height: 323px;
+}
+
 .finally__mark {
   width: 200px;
   margin: 50px 0 20px;
@@ -34,4 +38,10 @@
 .finally__button:hover {
   color: #fff;
   background: #4a90e2;
+}
+
+@media screen and (max-width: 525px) {
+  .finally {
+    height: auto;
+  }
 }

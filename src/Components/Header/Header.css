@@ -17,11 +17,14 @@
 }
 
 .header__progressElement {
-  width: calc(100% / 3);
+  width: 0%;
   height: 5px;
+  transition: 1s;
   background-color: #fff;
 }
 
 .header__progressElement.blue {
   background-color: #4a90e2;
+  transition: 1s;
+  width: calc(100% / 3);
 }

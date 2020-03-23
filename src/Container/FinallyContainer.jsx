@@ -25,7 +25,15 @@ const FinallyContainer = ({
       }
     });
 
-  return <FinallyWithProps getUserData={getUserData} />;
+  const [load, setLoad] = React.useState(false);
+  const loadDone = () => setLoad(true);
+  return (
+    <FinallyWithProps
+      getUserData={getUserData}
+      load={load}
+      loadDone={loadDone}
+    />
+  );
 };
 
 const mapStateToProps = ({

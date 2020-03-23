@@ -14,7 +14,6 @@ export const changeInputsAC = ({ target: { value, name } }) => ({
   value,
   name
 });
-
 export const validEmailAC = ({ target: { value } }) => ({
   type: VALID_EMAIL,
   email: value
