@@ -44,8 +44,6 @@ export class SecondStepWithProps extends React.Component {
                 <div key={id} className={"secondStep__dateElementWrap"}>
                   <input
                     type="number"
-                    onChange={onChange}
-                    onBlur={onBlur}
                     value={value}
                     error={error}
                     key={id}
@@ -53,6 +51,8 @@ export class SecondStepWithProps extends React.Component {
                     max={max && max}
                     name={name}
                     placeholder={placeholder}
+                    onChange={onChange}
+                    onBlur={onBlur}
                     className={`secondStep__dateElement ${
                       error || !adult ? "error" : ""
                     }`}

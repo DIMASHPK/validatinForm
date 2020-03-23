@@ -39,11 +39,11 @@ const FooterContainer = ({
 
 const mapStateToProps = ({
   FirstValiditionReducer: {
-    email: { validEmail },
-    password: { validPassword }
+    emailValid: { validEmail },
+    passwordValid: { validPassword }
   },
   SecondValiditionReducer: {
-    date: {
+    dateValid: {
       day: { dayValid },
       month: { monthValid },
       year: { yearValid }

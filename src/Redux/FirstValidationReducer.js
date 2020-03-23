@@ -1,25 +1,18 @@
-import {
-  EMAIL,
-  PASSWORD,
-  CONFIRM,
-  VALID_EMAIL,
-  VALID_PASSWORD,
-  VALID_CONFIRM
-} from "./Constats";
+import { CHANGE, VALID_EMAIL, VALID_PASSWORD, VALID_CONFIRM } from "./Constats";
 import * as validFunc from "../ValidationFunc/ValidationFunc";
 
 /* state */
 const initialState = {
-  email: {
+  email: "",
+  password: "",
+  confirm: "",
+  emailValid: {
     validEmail: false,
-    emailError: "",
-    email: ""
+    emailError: ""
   },
-  password: {
+  passwordValid: {
     validPassword: false,
-    password: "",
     passwordError: "",
-    confirm: "",
     confirmError: ""
   }
 };
@@ -27,38 +20,19 @@ const initialState = {
 /* reducer */
 export const FirstValiditionReducer = (
   state = initialState,
-  { type, email, password, confirm }
+  { type, name, value, email, password, confirm }
 ) => {
   switch (type) {
-    case EMAIL:
+    case CHANGE:
       return {
         ...state,
-        email: {
-          ...state.email,
-          email
-        }
-      };
-    case PASSWORD:
-      return {
-        ...state,
-        password: {
-          ...state.password,
-          password
-        }
-      };
-    case CONFIRM:
-      return {
-        ...state,
-        password: {
-          ...state.password,
-          confirm
-        }
+        [name]: value
       };
     case VALID_EMAIL:
       return {
         ...state,
-        email: {
-          ...state.email,
+        emailValid: {
+          ...state.emailValid,
           emailError: validFunc.emailValid(email),
           validEmail: validFunc.emailValid(email) === ""
         }
@@ -66,21 +40,21 @@ export const FirstValiditionReducer = (
     case VALID_PASSWORD:
       return {
         ...state,
-        password: {
-          ...state.password,
+        passwordValid: {
+          ...state.passwordValid,
           passwordError: validFunc.passwordValid(password)
         }
       };
     case VALID_CONFIRM:
       return {
         ...state,
-        password: {
-          ...state.password,
+        passwordValid: {
+          ...state.passwordValid,
           validPassword:
-            state.password.passwordError === "" &&
-            state.password.password === confirm,
+            state.passwordValid.passwordError === "" &&
+            state.password === confirm,
           confirmError:
-            state.password.password === confirm
+            state.password === confirm
               ? ""
               : "Password confirmation should match the password"
         }

@@ -1,88 +1,39 @@
-import {
-  DAY,
-  MONTH,
-  YEAR,
-  GENDER,
-  ABOUT_US,
-  VALID_DAY,
-  VALID_YEAR,
-  VALID_MONTH
-} from "./Constats";
+import { CHANGE, VALID_DAY, VALID_YEAR, VALID_MONTH } from "./Constats";
 import * as validFunc from "../ValidationFunc/ValidationFunc";
 
 /* state */
 const initialState = {
-  date: {
-    day: { day: "", dayValid: false, dayError: "" },
-    month: { month: "", monthValid: false, monthError: "" },
-    year: { year: "", yearValid: false, yearError: "" }
-  },
+  day: "",
+  month: "",
+  year: "",
   adult: true,
   gender: "male",
-  aboutUs: ""
+  aboutUs: "",
+  dateValid: {
+    day: { dayValid: false, dayError: "" },
+    month: { month: "", monthValid: false, monthError: "" },
+    year: { year: "", yearValid: false, yearError: "" }
+  }
 };
 
 export const SecondValiditionReducer = (
   state = initialState,
-  { type, day, month, year, gender, aboutUs }
+  { type, name, value, day, month, year }
 ) => {
-  let adult = validFunc.adult(
-    state.date.year.year,
-
-    state.date.month.month,
-    state.date.day.day
-  );
+  let adult = validFunc.adult(state.year, state.month, state.day);
   switch (type) {
-    case DAY:
+    case CHANGE:
       return {
         ...state,
-        date: {
-          ...state.date,
-          day: {
-            ...state.date.day,
-            day
-          }
-        }
-      };
-    case MONTH:
-      return {
-        ...state,
-        date: {
-          ...state.date,
-          month: {
-            ...state.date.month,
-            month: month
-          }
-        }
-      };
-    case YEAR:
-      return {
-        ...state,
-        date: {
-          ...state.date,
-          year: {
-            ...state.date.year,
-            year
-          }
-        }
-      };
-    case GENDER:
-      return {
-        ...state,
-        gender
-      };
-    case ABOUT_US:
-      return {
-        ...state,
-        aboutUs
+        [name]: value
       };
     case VALID_DAY:
       return {
         ...state,
-        date: {
-          ...state.date,
+        dateValid: {
+          ...state.dateValid,
           day: {
-            ...state.date.day,
+            ...state.dateValid.day,
             dayError: validFunc.dayValid(day),
             dayValid: validFunc.dayValid(day) === ""
           }
@@ -92,10 +43,10 @@ export const SecondValiditionReducer = (
     case VALID_MONTH:
       return {
         ...state,
-        date: {
-          ...state.date,
+        dateValid: {
+          ...state.dateValid,
           month: {
-            ...state.date.month,
+            ...state.dateValid.month,
             monthError: validFunc.monthValid(month),
             monthValid: validFunc.monthValid(month) === ""
           }
@@ -105,10 +56,10 @@ export const SecondValiditionReducer = (
     case VALID_YEAR:
       return {
         ...state,
-        date: {
-          ...state.date,
+        dateValid: {
+          ...state.dateValid,
           year: {
-            ...state.date.year,
+            ...state.dateValid.year,
             yearError: validFunc.yearValid(year),
             yearValid: validFunc.yearValid(year) === ""
           }

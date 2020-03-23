@@ -1,9 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  changeEmailAC,
-  changePasswordAC,
-  changeConfirmPasswordAC,
+  changeInputsAC,
   validEmailAC,
   validPasswordAC,
   validConfirmAC
@@ -17,9 +15,7 @@ const FirstStepContainer = ({
   emailError,
   passwordError,
   confirmError,
-  changeEmailAC,
-  changePasswordAC,
-  changeConfirmPasswordAC,
+  changeInputsAC,
   validEmailAC,
   validPasswordAC,
   validConfirmAC
@@ -28,7 +24,7 @@ const FirstStepContainer = ({
     {
       id: 1,
       name: "email",
-      onChange: changeEmailAC,
+      onChange: changeInputsAC,
       onBlur: validEmailAC,
       value: email,
       error: emailError
@@ -36,7 +32,7 @@ const FirstStepContainer = ({
     {
       id: 2,
       name: "password",
-      onChange: changePasswordAC,
+      onChange: changeInputsAC,
       onBlur: validPasswordAC,
       value: password,
       error: passwordError
@@ -45,7 +41,7 @@ const FirstStepContainer = ({
       id: 3,
       name: "confirm password",
       label: "confirm",
-      onChange: changeConfirmPasswordAC,
+      onChange: changeInputsAC,
       onBlur: validConfirmAC,
       value: confirm,
       error: confirmError
@@ -56,8 +52,11 @@ const FirstStepContainer = ({
 
 const mapStateToProps = ({
   FirstValiditionReducer: {
-    email: { email, emailError, validEmail },
-    password: { password, confirm, passwordError, confirmError, validPassword }
+    email,
+    password,
+    confirm,
+    emailValid: { emailError },
+    passwordValid: { passwordError, confirmError }
   }
 }) => ({
   email,
@@ -69,9 +68,7 @@ const mapStateToProps = ({
 });
 
 const mapDispatchToPtops = {
-  changeEmailAC,
-  changePasswordAC,
-  changeConfirmPasswordAC,
+  changeInputsAC,
   validEmailAC,
   validPasswordAC,
   validConfirmAC

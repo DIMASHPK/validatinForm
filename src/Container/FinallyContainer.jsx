@@ -19,40 +19,18 @@ const FinallyContainer = ({
       userData: {
         email,
         password,
-        dateOfBirhday: new Date(`${year}-${month}-${day}`).toLocaleDateString(),
+        dateOfBirhday: getDate(),
         gender,
         aboutUs
       }
     });
 
-  return (
-    <FinallyWithProps
-      email={email}
-      password={password}
-      day={day}
-      month={month}
-      year={year}
-      gender={gender}
-      aboutUs={aboutUs}
-      getUserData={getUserData}
-    />
-  );
+  return <FinallyWithProps getUserData={getUserData} />;
 };
 
 const mapStateToProps = ({
-  FirstValiditionReducer: {
-    email: { email },
-    password: { password }
-  },
-  SecondValiditionReducer: {
-    date: {
-      day: { day },
-      month: { month },
-      year: { year }
-    },
-    gender,
-    aboutUs
-  }
+  FirstValiditionReducer: { email, password },
+  SecondValiditionReducer: { day, month, year, gender, aboutUs }
 }) => ({
   email,
   password,

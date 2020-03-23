@@ -2,14 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { SecondStepWithProps } from "../Components/SecondStep/SecondStep";
 import {
-  changeDayAC,
-  changeMonthAC,
-  changeYearAC,
+  changeInputsAC,
   validDayAC,
   validMonthAC,
-  validYearAC,
-  changeGenderAC,
-  changeAboutUsAC
+  validYearAC
 } from "../Redux/ActionsCreater";
 
 const SecondStepContainer = ({
@@ -22,14 +18,10 @@ const SecondStepContainer = ({
   yearError,
   aboutUs,
   gender,
-  changeDayAC,
-  changeMonthAC,
-  changeYearAC,
+  changeInputsAC,
   validDayAC,
   validMonthAC,
-  validYearAC,
-  changeGenderAC,
-  changeAboutUsAC
+  validYearAC
 }) => {
   const dateInputs = [
     {
@@ -39,7 +31,7 @@ const SecondStepContainer = ({
       max: 31,
       placeholder: "DD",
       value: day,
-      onChange: changeDayAC,
+      onChange: changeInputsAC,
       onBlur: validDayAC,
       error: dayError
     },
@@ -50,7 +42,7 @@ const SecondStepContainer = ({
       max: 12,
       placeholder: "MM",
       value: month,
-      onChange: changeMonthAC,
+      onChange: changeInputsAC,
       onBlur: validMonthAC,
       error: monthError
     },
@@ -60,23 +52,23 @@ const SecondStepContainer = ({
       min: 0,
       placeholder: "YYYY",
       value: year,
-      onChange: changeYearAC,
+      onChange: changeInputsAC,
       onBlur: validYearAC,
       error: yearError
     }
   ];
 
   const genderInputs = [
-    { id: 1, value: "male", onChange: changeGenderAC, gender: gender },
-    { id: 2, value: "female", onChange: changeGenderAC, gender: gender },
-    { id: 3, value: "unspecified", onChange: changeGenderAC, gender: gender }
+    { id: 1, value: "male", onChange: changeInputsAC, gender: gender },
+    { id: 2, value: "female", onChange: changeInputsAC, gender: gender },
+    { id: 3, value: "unspecified", onChange: changeInputsAC, gender: gender }
   ];
 
   return (
     <SecondStepWithProps
       dateInputs={dateInputs}
       genderInputs={genderInputs}
-      changeAboutUsAC={changeAboutUsAC}
+      changeAboutUsAC={changeInputsAC}
       aboutUs={aboutUs}
       adult={adult}
     />
@@ -85,14 +77,17 @@ const SecondStepContainer = ({
 
 const mapStateToProps = ({
   SecondValiditionReducer: {
-    date: {
-      day: { day, dayValid, dayError },
-      month: { month, monthValid, monthError },
-      year: { year, yearValid, yearError }
-    },
+    day,
+    month,
+    year,
     adult,
     gender,
-    aboutUs
+    aboutUs,
+    dateValid: {
+      day: { dayError },
+      month: { monthError },
+      year: { yearError }
+    }
   }
 }) => ({
   adult,
@@ -107,14 +102,10 @@ const mapStateToProps = ({
 });
 
 const mapDispatchToProps = {
-  changeDayAC,
-  changeMonthAC,
-  changeYearAC,
+  changeInputsAC,
   validDayAC,
   validMonthAC,
-  validYearAC,
-  changeGenderAC,
-  changeAboutUsAC
+  validYearAC
 };
 
 export const SecondStep = connect(
