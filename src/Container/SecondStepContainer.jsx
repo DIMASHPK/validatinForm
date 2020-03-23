@@ -31,7 +31,6 @@ const SecondStepContainer = ({
       max: 31,
       placeholder: "DD",
       value: day,
-      onChange: changeInputsAC,
       onBlur: validDayAC,
       error: dayError
     },
@@ -42,7 +41,6 @@ const SecondStepContainer = ({
       max: 12,
       placeholder: "MM",
       value: month,
-      onChange: changeInputsAC,
       onBlur: validMonthAC,
       error: monthError
     },
@@ -52,23 +50,22 @@ const SecondStepContainer = ({
       min: 0,
       placeholder: "YYYY",
       value: year,
-      onChange: changeInputsAC,
       onBlur: validYearAC,
       error: yearError
     }
   ];
 
   const genderInputs = [
-    { id: 1, value: "male", onChange: changeInputsAC, gender: gender },
-    { id: 2, value: "female", onChange: changeInputsAC, gender: gender },
-    { id: 3, value: "unspecified", onChange: changeInputsAC, gender: gender }
+    { id: 1, value: "male", gender: gender },
+    { id: 2, value: "female", gender: gender },
+    { id: 3, value: "unspecified", gender: gender }
   ];
 
   return (
     <SecondStepWithProps
       dateInputs={dateInputs}
       genderInputs={genderInputs}
-      changeAboutUsAC={changeInputsAC}
+      onChange={changeInputsAC}
       aboutUs={aboutUs}
       adult={adult}
     />

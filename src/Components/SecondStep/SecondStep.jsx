@@ -19,7 +19,8 @@ export class SecondStepWithProps extends React.Component {
       genderInputs,
       changeAboutUsAC,
       aboutUs,
-      adult
+      adult,
+      onChange
     } = this.props;
 
     return (
@@ -30,17 +31,7 @@ export class SecondStepWithProps extends React.Component {
           </h2>
           <div className="secondStep__dateWrap">
             {dateInputs.map(
-              ({
-                id,
-                name,
-                min,
-                max,
-                placeholder,
-                value,
-                onChange,
-                onBlur,
-                error
-              }) => (
+              ({ id, name, min, max, placeholder, value, onBlur, error }) => (
                 <div key={id} className={"secondStep__dateElementWrap"}>
                   <input
                     type="number"
@@ -66,7 +57,7 @@ export class SecondStepWithProps extends React.Component {
         <div className="secondStep__gender">
           <h2 className="secondStep__title">Gender</h2>
           <div className="secondStep__genderWrap">
-            {genderInputs.map(({ id, value, gender, onChange }) => (
+            {genderInputs.map(({ id, value, gender }) => (
               <div
                 className={`secondStep__generElementWrap ${
                   gender === value ? "active" : ""
@@ -100,7 +91,7 @@ export class SecondStepWithProps extends React.Component {
               name="aboutUs"
               className={"secondStep__aboutUsSelect"}
               value={aboutUs}
-              onChange={changeAboutUsAC}
+              onChange={onChange}
             >
               <option
                 value=""
