@@ -1,6 +1,5 @@
 import React from "react";
 import { Header } from "./Components/Header/Header";
-import { Container } from "./Container/Container";
 import { FirstStep } from "./Container/FirstStepContainer";
 import { SecondStep } from "./Container/SecondStepContainer";
 import { Route, withRouter } from "react-router-dom";
@@ -13,7 +12,6 @@ import "./App.css";
 const App = ({ location: { pathname } }) => (
   <>
     <Header />
-    {/* <Container /> */}
     <Route exact path="/nextStep">
       <SecondStep />
     </Route>
