@@ -37,17 +37,6 @@ section {
   border-color: red;
 }
 
-@media screen and (max-width: 525px) {
-  body {
-    width: 100%;
-    padding: 0;
-  }
-  #root {
-    min-width: 100%;
-    border: none;
-  }
-}
-
 .fade-enter {
   transform: scale(1);
 }
@@ -69,4 +58,37 @@ section {
   position: relative;
   height: 337px;
   min-width: 525px;
+}
+
+@media screen and (max-width: 525px) {
+  body {
+    width: 100%;
+    padding: 0;
+  }
+  #root {
+    min-width: 100%;
+    border: none;
+  }
+  .transitionWrap__relative {
+    min-width: 100%;
+  }
+  section {
+    min-width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .fade-enter {
+    transform: translateX(-50%) scale(1);
+  }
+  .fade-enter.fade-enter-active {
+    transform: translateX(-50%) scale(0);
+    transition: transform 500ms ease-in;
+  }
+
+  .fade-exit {
+    transform: translateX(-50%) scale(0);
+  }
+  .fade-exit.fade-exit-active {
+    transform: translateX(-50%) scale(1);
+  }
 }
