@@ -77,7 +77,6 @@ export const SecondStepWithProps = ({
           <option
             value=""
             disabled
-            selected
             hidden
             className={"secondStep__aboutUsInput"}
           ></option>
