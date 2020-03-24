@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-
 import "./Header.css";
 
 export const HeaderWithUrl = ({ location: { pathname } }) => (

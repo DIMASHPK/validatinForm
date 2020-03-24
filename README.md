@@ -30,3 +30,7 @@ This validation functions located in ValidationFunc
    the Browser console, something like:
    9.1. { “user_data”: { “email”: ..., “password”: ..., “date_of_birth”: 1485761262,
    “gender”: “female”, “how_hear_about_us”: null } }
+
+Extras
+• Write some unit tests for React components and reducers.
+• Add animations between step transitions and to the progress bar.

@@ -11,8 +11,8 @@ const initialState = {
   aboutUs: "",
   dateValid: {
     day: { dayValid: false, dayError: "" },
-    month: { month: "", monthValid: false, monthError: "" },
-    year: { year: "", yearValid: false, yearError: "" }
+    month: { monthValid: false, monthError: "" },
+    year: { yearValid: false, yearError: "" }
   }
 };
 

@@ -19,7 +19,6 @@ const FirstStepContainer = ({
   validEmailAC,
   validPasswordAC,
   validConfirmAC,
-  status
 }) => {
   const inputs = [
     {
@@ -48,7 +47,7 @@ const FirstStepContainer = ({
       error: confirmError
     }
   ];
-  return <FirstStepWithProps inputs={inputs} status={status} />;
+  return <FirstStepWithProps inputs={inputs} />;
 };
 
 const mapStateToProps = ({

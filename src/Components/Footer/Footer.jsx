@@ -13,8 +13,8 @@ export const FooterWithProps = ({ path, disabled }) => (
     ) : (
       <div></div>
     )}
-    <button className={"footer__button"} disabled={disabled()}>
-      {disabled() === true ? (
+    <button className={"footer__button"} disabled={disabled}>
+      {disabled === true ? (
         <span className={"footer__link"}>Next</span>
       ) : (
         <NavLink

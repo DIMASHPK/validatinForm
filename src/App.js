@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, withRouter, Switch } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Header } from "./Components/Header/Header";
 import { FirstStep } from "./Container/FirstStepContainer";
 import { SecondStep } from "./Container/SecondStepContainer";
@@ -7,15 +8,14 @@ import { Finally } from "./Container/FinallyContainer";
 import { Footer } from "./Container/FooterContainer";
 import "./Assets/Fonts/Fonts.css";
 import "./App.css";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-const App = ({ location: { pathname, key } }) => (
+const App = ({ location: { pathname } }) => (
   <>
     <Header />
     <div className="transitionWrap">
       <TransitionGroup className={"transitionWrap__relative"}>
         <CSSTransition
-          key={key}
+          key={pathname}
           timeout={{ enter: 500, exit: 500 }}
           classNames={"fade"}
         >

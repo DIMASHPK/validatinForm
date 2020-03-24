@@ -34,7 +34,7 @@ const FooterContainer = ({
     return true;
   };
 
-  return <FooterWithProps path={path} disabled={disabledLink} />;
+  return <FooterWithProps path={path} disabled={disabledLink()} />;
 };
 
 const mapStateToProps = ({
