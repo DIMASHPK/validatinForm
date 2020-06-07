@@ -66,7 +66,7 @@ export const SecondStepWithProps = ({
       </div>
     </div>
     <div className="secondStep__aboutUs">
-      <h2 className="secondStep__title"> WHERE DID YOU HEAR ABOUT IS?</h2>
+      <h2 className="secondStep__title"> WHERE DID YOU HEAR ABOUT US?</h2>
       <div className="secondStep__aboutUsSelectWrap">
         <select
           name="aboutUs"

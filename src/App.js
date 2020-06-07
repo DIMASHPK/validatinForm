@@ -1,6 +1,6 @@
 import React from "react";
-import { Route, withRouter, Switch } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { Route, withRouter} from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 import { Header } from "./Components/Header/Header";
 import { FirstStep } from "./Container/FirstStepContainer";
 import { SecondStep } from "./Container/SecondStepContainer";

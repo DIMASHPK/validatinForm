@@ -27,7 +27,8 @@ const FirstStepContainer = ({
       onChange: changeInputsAC,
       onBlur: validEmailAC,
       value: email,
-      error: emailError
+      error: emailError,
+      type: "text"
     },
     {
       id: 2,
@@ -35,7 +36,8 @@ const FirstStepContainer = ({
       onChange: changeInputsAC,
       onBlur: validPasswordAC,
       value: password,
-      error: passwordError
+      error: passwordError,
+      type: "password"
     },
     {
       id: 3,
@@ -44,7 +46,8 @@ const FirstStepContainer = ({
       onChange: changeInputsAC,
       onBlur: validConfirmAC,
       value: confirm,
-      error: confirmError
+      error: confirmError,
+      type: "password"
     }
   ];
   return <FirstStepWithProps inputs={inputs} />;
