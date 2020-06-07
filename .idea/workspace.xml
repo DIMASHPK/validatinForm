@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4948ccd-f8a5-4663-a6f6-9eaf06feb7a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Container/Container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Container.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FirstStep/FirstStep.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FirstStep/FirstStep.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/FirstStepContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/FirstStepContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Store.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584883962663</updated>
       <workItem from="1584883967165" duration="57000" />
+      <workItem from="1591529892120" duration="2729000" />
     </task>
     <servers />
   </component>
@@ -54,7 +62,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

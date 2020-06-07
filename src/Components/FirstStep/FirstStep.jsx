@@ -1,7 +1,8 @@
 import React from "react";
+import { reduxForm, Field } from "redux-form";
 import "./FirstStep.css";
 
-export const FirstStepWithProps = ({ inputs }) => (
+const FirstStepWithProps = ({ inputs }) => (
   <section className={`firstStep`}>
     {inputs.map(({ name, id, label, value, onChange, onBlur, error }) => (
       <div
@@ -11,6 +12,7 @@ export const FirstStepWithProps = ({ inputs }) => (
         <label className={"firstStep__label"} htmlFor={name}>
           {error.length > 1 ? error : name}
         </label>
+
         <input
           className="firstStep__input"
           type="text"
@@ -23,3 +25,5 @@ export const FirstStepWithProps = ({ inputs }) => (
     ))}
   </section>
 );
+
+export default reduxForm({ form: "my first redux form" })(FirstStepWithProps);

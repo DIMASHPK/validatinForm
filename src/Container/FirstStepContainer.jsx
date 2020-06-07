@@ -6,7 +6,7 @@ import {
   validPasswordAC,
   validConfirmAC
 } from "../Redux/ActionsCreater";
-import { FirstStepWithProps } from "../Components/FirstStep/FirstStep";
+import FirstStepWithProps from "../Components/FirstStep/FirstStep";
 
 const FirstStepContainer = ({
   email,
@@ -18,7 +18,7 @@ const FirstStepContainer = ({
   changeInputsAC,
   validEmailAC,
   validPasswordAC,
-  validConfirmAC,
+  validConfirmAC
 }) => {
   const inputs = [
     {

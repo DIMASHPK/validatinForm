@@ -9,27 +9,38 @@ import { Footer } from "./Container/FooterContainer";
 import "./Assets/Fonts/Fonts.css";
 import "./App.css";
 
-const App = ({ location: { pathname } }) => (
-  <>
-    <Header />
-    <div className="transitionWrap">
-      <TransitionGroup className={"transitionWrap__relative"}>
-        <CSSTransition
-          key={pathname}
-          timeout={{ enter: 500, exit: 500 }}
-          classNames={"fade"}
-        >
-          <Switch>
-            <Route exact path="/nextStep" component={() => <SecondStep />} />
-            <Route exact path="/finally" component={() => <Finally />} />
-            <Route exact path="/" component={() => <FirstStep />}></Route>
-          </Switch>
-        </CSSTransition>
-      </TransitionGroup>
-    </div>
+const App = ({ location: { pathname } }) => {
+  const routes = [
+    { path: "/nextStep", Component: SecondStep },
+    { path: "/finally", Component: Finally },
+    { path: "/", Component: FirstStep },
+  ];
 
-    {!pathname.includes("finally") && <Footer path={pathname} />}
-  </>
-);
+  return (
+    <>
+      <Header />
+      <div className="transitionWrap">
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            {({match}) =>(
+              <CSSTransition
+                in={match}
+                timeout={{ appear: 300, enter: 300, exit: 300 }}
+                classNames={`fade`}
+                unmountOnExit
+                appear={true}
+              >
+                <div className="fade">
+                  <Component />
+                </div>
+              </CSSTransition>
+            )}
+          </Route>
+        ))}
+      </div>
+      {!pathname.includes("finally") && <Footer path={pathname} />}
+    </>
+  );
+};
 
 export default withRouter(App);
