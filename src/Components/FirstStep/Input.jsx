@@ -1,19 +1,17 @@
 import React from 'react'
 
-export const Input = ({error, name, label, onChange, onBlur, value, type}) => (
+export const Input = ({input:{name, ...other}, meta: {error, touched}, ...props}) => (
     <div
-        className={`firstStep__inputWrap ${error.length > 1 ? "error" : ""}`}
+        className={`firstStep__inputWrap ${touched && error ? "error" : ""}`}
     >
         <label className={"firstStep__label"} htmlFor={name}>
-            {error.length > 1 ? error : name}
+            {touched && error? error : name}
         </label>
         <input
             className="firstStep__input"
-            type={type}
-            name={label ? label : name}
-            onChange={onChange}
-            onBlur={onBlur}
-            value={value}
+            id = {name}
+            {...other}
+            {...props}
         />
     </div>
 )

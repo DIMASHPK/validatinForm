@@ -65,6 +65,7 @@ h2 {
 
 .secondStep__generElementWrap.active {
   background: #4a90e2;
+  border-color: #4a90e2;
 }
 
 .secondStep__generElementWrap.active .secondStep__genderElementLabel {

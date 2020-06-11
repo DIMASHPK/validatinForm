@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4948ccd-f8a5-4663-a6f6-9eaf06feb7a2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/FirstStep/Input.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/SecondStep/DateInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Wrapper/Wrapper.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/FirstStep/FirstStep.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FirstStep/FirstStep.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FirstStep/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FirstStep/Input.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/SecondStep/SecondStep.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SecondStep/SecondStep.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/FirstStepContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/FirstStepContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/FirstStepContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/FooterContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/FooterContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/SecondStepContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/SecondStepContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ValidationFunc/ValidationFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ValidationFunc/ValidationFunc.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +53,14 @@
       <option name="presentableId" value="Default" />
       <updated>1584883962663</updated>
       <workItem from="1584883967165" duration="57000" />
-      <workItem from="1591529892120" duration="3634000" />
+      <workItem from="1591529892120" duration="6630000" />
+      <workItem from="1591538286330" duration="1473000" />
+      <workItem from="1591566368795" duration="513000" />
+      <workItem from="1591597344420" duration="5143000" />
+      <workItem from="1591631395500" duration="3304000" />
+      <workItem from="1591638236915" duration="5496000" />
+      <workItem from="1591653938765" duration="2791000" />
+      <workItem from="1591657089476" duration="765000" />
     </task>
     <servers />
   </component>
